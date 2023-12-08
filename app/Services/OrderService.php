@@ -14,7 +14,9 @@ use App\Interfaces\Services\OrderServiceInterface;
 use App\Models\Ingredient;
 use App\Models\Order;
 use App\Models\Product;
+use App\Notifications\LowIngredientStock;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Notification;
 
 class OrderService implements OrderServiceInterface
 {
@@ -76,7 +78,7 @@ class OrderService implements OrderServiceInterface
                 $ingredient->available_stock < $ingredient->supplied_stock * 0.5 &&
                 $ingredient->is_stock_monitored
             ) {
-                $this->ReportLowIngredientInventory($ingredient);
+                $this->ReportLowIngredientStock($ingredient);
                 // @dev disable stock monitoring
                 $ingredient->is_stock_monitored = false;
             }
@@ -87,8 +89,10 @@ class OrderService implements OrderServiceInterface
     }
 
     // @todo replace with event
-    public function ReportLowIngredientInventory(Ingredient $ingredient): void
+    public function ReportLowIngredientStock(Ingredient $ingredient): void
     {
-        // @todo trigger an email
+        Notification::route('mail', [
+            'e@e.com' => 'Kitchen Manager',
+        ])->notify(new LowIngredientStock($ingredient));
     }
 }

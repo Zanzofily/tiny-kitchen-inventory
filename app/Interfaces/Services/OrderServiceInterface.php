@@ -12,5 +12,5 @@ interface OrderServiceInterface
 {
     public function createOrder(OrderDataObject $orderDataObject): ?Order;
 
-    public function ReportLowIngredientInventory(Ingredient $ingredient): void;
+    public function ReportLowIngredientStock(Ingredient $ingredient): void;
 }
