@@ -23,6 +23,9 @@ A 50% ratio has been picked for this notification, where every time an ingredien
 
 # Technical Details
 
+## Annotated Database diagram
+<img src="./docs/uml.png">
+
 ## Installation
 ## Scaling
 ## Linting
