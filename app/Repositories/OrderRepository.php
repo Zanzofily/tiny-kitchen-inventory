@@ -6,7 +6,7 @@ namespace App\Repositories;
 
 use App\DataObjects\OrderDataObject;
 use App\DataObjects\OrderLineDataObject;
-use App\Interfaces\OrderRepositoryInterface;
+use App\Interfaces\Repositories\OrderRepositoryInterface;
 use App\Models\Order;
 
 class OrderRepository implements OrderRepositoryInterface

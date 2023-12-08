@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\DataObjects\OrderDataObject;
 use App\DataObjects\OrderLineDataObject;
+use App\Exceptions\OutOfStockException;
 use App\Interfaces\Repositories\IngredientRepositoryInterface;
 use App\Interfaces\Repositories\OrderRepositoryInterface;
 use App\Interfaces\Repositories\ProductRepositoryInterface;
@@ -64,7 +65,7 @@ class OrderService implements OrderServiceInterface
             $orderIngredientAmount = $product_quantity * $ingredient->pivot->amount;
             // @dev validate that ingreident has sufficient stock to perform order
             if ($orderIngredientAmount > $ingredient->available_stock) {
-                // @todo add out of stock exception
+                throw new OutOfStockException();
             }
 
             // @dev deduct from order stock supply

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Repositories;
 
-use App\Interfaces\IngredientRepositoryInterface;
+use App\Interfaces\Repositories\IngredientRepositoryInterface;
 use App\Models\Ingredient;
 
 class IngredientRepository implements IngredientRepositoryInterface

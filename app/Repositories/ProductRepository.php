@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Repositories;
 
-use App\Interfaces\ProductRepositoryInterface;
+use App\Interfaces\Repositories\ProductRepositoryInterface;
 use App\Models\Product;
 
 class ProductRepository implements ProductRepositoryInterface
