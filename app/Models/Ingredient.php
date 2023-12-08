@@ -9,5 +9,5 @@ class Ingredient extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['amount', 'is_stock_monitored'];
+    protected $fillable = ['available_stock', 'original_stock', 'is_stock_monitored'];
 }

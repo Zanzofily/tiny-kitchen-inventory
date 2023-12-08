@@ -122,5 +122,12 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
-
+    // @dev for local testing purposes through services like mail trap
+    // 'stream' => [
+    //     'ssl' => [
+    //         'allow_self_signed' => true,
+    //         'verify_peer' => false,
+    //         'verify_peer_name' => false,
+    //     ],
+    // ],
 ];

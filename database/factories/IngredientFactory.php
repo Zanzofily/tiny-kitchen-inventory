@@ -16,8 +16,13 @@ class IngredientFactory extends Factory
      */
     public function definition(): array
     {
+        $stock = $this->faker->randomNumber(5);
+
         return [
-            //
+            'name' => $this->faker->name(),
+            'available_stock' => $stock,
+            'original_stock' => $stock,
+            'is_stock_monitored' => $this->faker->boolean(),
         ];
     }
 }

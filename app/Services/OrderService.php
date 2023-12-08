@@ -75,7 +75,7 @@ class OrderService implements OrderServiceInterface
 
             // @todo split the logic to prevent notifications on order failure
             if (
-                $ingredient->available_stock < $ingredient->supplied_stock * 0.5 &&
+                $ingredient->available_stock < $ingredient->original_stock * 0.5 &&
                 $ingredient->is_stock_monitored
             ) {
                 $this->ReportLowIngredientStock($ingredient);
@@ -92,7 +92,7 @@ class OrderService implements OrderServiceInterface
     public function ReportLowIngredientStock(Ingredient $ingredient): void
     {
         Notification::route('mail', [
-            'e@e.com' => 'Kitchen Manager',
+            'elkasem2012@gmail.com' => 'Kitchen Manager',
         ])->notify(new LowIngredientStock($ingredient));
     }
 }
