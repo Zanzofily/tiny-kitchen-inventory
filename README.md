@@ -26,7 +26,9 @@ A 50% ratio has been picked for this notification, where every time an ingredien
 ## Annotated Database diagram
 <img src="./docs/uml.png">
 
-## Installation
-## Scaling
 ## Linting
+[Laravel pint](https://laravel.com/docs/10.x/pint) is used for code linting.
+
 ## Testing
+Testing could use a lot of work, you can inspect the coverage by running `php artisan test --coverage` if you've xdebug installed.
+<img src="./docs/coverage.png">
