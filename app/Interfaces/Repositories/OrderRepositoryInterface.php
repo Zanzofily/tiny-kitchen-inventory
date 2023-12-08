@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Interfaces;
+namespace App\Interfaces\Repositories;
 
 use App\DataObjects\OrderDataObject;
 use App\Models\Order;

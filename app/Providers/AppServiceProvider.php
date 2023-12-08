@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Interfaces\IngredientRepositoryInterface;
-use App\Interfaces\OrderRepositoryInterface;
-use App\Interfaces\ProductRepositoryInterface;
+use App\Interfaces\Repositories\IngredientRepositoryInterface;
+use App\Interfaces\Repositories\OrderRepositoryInterface;
+use App\Interfaces\Repositories\ProductRepositoryInterface;
 use App\Repositories\IngredientRepository;
 use App\Repositories\OrderRepository;
 use App\Repositories\ProductRepository;
